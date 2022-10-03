@@ -95,27 +95,34 @@ body {
     justify-content: space-between;
 }
 
-.site-nav .link:hover,
-.site-nav .link:focus {
-    color: var(--accent-text-color);   
-}
-
-.site-nav .link.current {
-    color: var(--accent-text-color);
-}
 .site-nav .item {
     position: relative;
 }
-.site-nav .link.current::after {
-    position:absolute;
+.link::before {
+    position: absolute;
     content: "";
-    display: flex;
-    margin-top: 28px;
-    width: 100%;
+    left: 0;
+    bottom: 0;
+    width: 0;
     height: 4px;
-    transform: translateY(1px);
-    border-bottom: 4px solid var(--accent-text-color);
+    background-color: var(--accent-text-color);
     border-radius: 2px;
+}
+.item .link:hover::before,
+.item .link:focus::before {
+    color: var(--accent-text-color);
+    width: 100%;
+}
+.item .link.current::before {
+    color: var(--accent-text-color);
+    width: 100%;
+}
+.item .link:hover,
+.item .link:focus {
+    color: var(--accent-text-color);
+}
+.item .link.current {
+    color: var(--accent-text-color);
 }
 .auth-nav .item + .item {
     margin-left: 50px;
@@ -573,6 +580,7 @@ footer .info {
     right: 8px;
     width: 30px;
     height: 30px;
+    padding: 0;
     border-radius: 50%;
     border: 1px solid rgba(0, 0, 0, 0.1);
     background-color: var(--primary-white-color);
