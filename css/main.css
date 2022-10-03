@@ -107,15 +107,19 @@ body {
     height: 4px;
     background-color: var(--accent-text-color);
     border-radius: 2px;
+    transition: width 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .item .link:hover::before,
 .item .link:focus::before {
-    color: var(--accent-text-color);
+    background-color: var(--accent-text-color);
     width: 100%;
 }
 .item .link.current::before {
     color: var(--accent-text-color);
     width: 100%;
+}
+.item .link {
+    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .item .link:hover,
 .item .link:focus {
@@ -140,6 +144,7 @@ body {
     line-height: 1.14;
     letter-spacing: 0.02em;
     text-decoration-line: none;
+    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .auth-nav .contact:hover,
 .auth-nav .contact:focus {
@@ -215,6 +220,7 @@ body {
     font-weight: 500;
     line-height: 1.62;
     cursor: pointer;
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .btn-filter:hover,
 .btn-filter:focus {
@@ -407,6 +413,8 @@ body {
     height: 44px;
     border-radius: 50px;
     fill: var(--icon-color);
+    transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1), background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    
 }
 
 .social-link:hover,
@@ -483,6 +491,7 @@ body {
     border: 1px solid #AFB1B8;
     border-radius: 4px;
     fill: var(--icon-color);
+    transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1), border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .companys-item:not(:last-child) {
@@ -524,6 +533,7 @@ footer .city {
 footer .info {
     color: rgba(255, 255, 255, 0.6);
     letter-spacing: 0.03em;
+    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .info:hover,
 .info:focus {
@@ -563,6 +573,7 @@ footer .info {
 .social-link.con {
     fill: var(--primary-white-color);
     background: rgba(255, 255, 255, 0.1);
+    
 }
 
 .social-link.con:hover,
