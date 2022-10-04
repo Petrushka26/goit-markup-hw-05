@@ -97,6 +97,7 @@ body {
 
 .site-nav .item {
     position: relative;
+    transform: translateY(1px);
 }
 .link::before {
     position: absolute;
@@ -109,6 +110,7 @@ body {
     border-radius: 2px;
     transition: width 250ms cubic-bezier(0.4, 0, 0.2, 1);
     transform: translateX(-50%);
+    transform: translateY();
 }
 .item .link:hover::before,
 .item .link:focus::before {
@@ -221,7 +223,8 @@ body {
     font-weight: 500;
     line-height: 1.62;
     cursor: pointer;
-    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1), color 250ms cubic-bezier(0.4, 0, 0.2, 1), box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    
 }
 .btn-filter:hover,
 .btn-filter:focus {
@@ -249,10 +252,10 @@ body {
 }
 .examples .item {
     flex-basis: calc((100% - 2 * 30px) / 3);
+    transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1)
 }
 
 .examples .item:hover {
-
     box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06), 1px 4px 6px rgba(0, 0, 0, 0.16);
 }
 /* filters*/
@@ -471,7 +474,6 @@ body {
     line-height: 1.55;
     background-color: rgba(33, 150, 243, 0.9);
     color: var(--primary-white-color);
-
 }
 
 /*Regular customers*/
@@ -586,6 +588,62 @@ footer .info {
 .social-link.con:focus {
     background-color: var(--accent-text-color)
 }
+
+.join-mail {
+    margin-left: 93px;
+}
+.form-mail input {
+    color: var(--primary-white-color);
+    padding-left: 16px;
+    width: 358px;
+    height: 50px;
+    margin-right: 12px;
+    background-color: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 4px;
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.15));
+}
+.form-mail button,
+.form button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 200px;
+    height: 50px;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 1.87;
+    letter-spacing: 0.06em;
+    color: var(--primary-white-color);
+    background-color: var(--accent-text-color);
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+    border-color: transparent;
+    border-radius: 4px;
+    cursor: pointer;
+
+}
+.form-mail label {
+    color: var(--primary-white-color);
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 1.14;
+    letter-spacing: 0.03em;
+}
+.form-mail input::placeholder{
+    color: rgba(255, 255, 255, 0.6);
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.25;
+    letter-spacing: 0.03em;
+
+}
+.mail-btn {
+    display: flex;
+    margin-top: 20px;
+}
+.icon-send {
+    margin-left: 10px;
+}
 /*modal window*/
 
 .close {
@@ -623,6 +681,17 @@ footer .info {
     visibility: hidden;
     pointer-events: none;
 }
+
+.modal-title {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 30px;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 1.15;
+    letter-spacing: 0.03em;
+    color: var(--title-text-color);
+}
 .modal {
     position: absolute;
     top: 50%;
@@ -635,6 +704,42 @@ footer .info {
 }
 .backdrop.is-hidden .modal {
     transform: translate(-50%, -50%) scale(0.6);
+}
+
+.form {
+    margin-left: auto;
+    margin-right: auto;
+    padding: 40px;
+    width: 100%;
+}
+
+.form-field {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 28px;
+}
+
+.form-field input {
+    margin: 0;
+    padding: 0;
+    height: 40px;
+    border: 1px solid rgba(33, 33, 33, 0.2);
+    border-radius: 4px;
+}
+.form-field textarea {
+    resize: none;
+    height: 120px;
+    border: 1px solid rgba(33, 33, 33, 0.2);
+    border-radius: 4px;
+}
+.form button {
+    margin-top: 30px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.form-field textarea::placeholder {
+    padding-top: 12px;
+    padding-left: 16px;
 }
 
 /* спрятать заголовок */
